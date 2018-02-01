@@ -1,0 +1,23 @@
+{
+  "name": "node_web_scraping",
+  "version": "1.0.0",
+  "description": "Example of web scraping with node",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RyanOM/node_web_scraping.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RyanOM/node_web_scraping/issues"
+  },
+  "homepage": "https://github.com/RyanOM/node_web_scraping#readme",
+  "dependencies": {
+    "axios": "^0.17.1",
+    "cheerio": "^1.0.0-rc.2"
+  }
+}
