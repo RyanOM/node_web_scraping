@@ -7,6 +7,16 @@ axios.get('https://dev.to/aurelkurtula')
     if (response.status === 200) {
       const html = response.data;
       const $ = cheerio.load(html);
-      console.log(response.data);
+      let devtoList = [];
+      $('.single-article').each(function(i, elem) {
+        devtoList[i] = {
+          title: $(this).find('h3').text().trim(),
+          url: $(this).children('.index-article-link').attr('href'),
+          tags: $(this).find('.tags').text().split('#')
+            .map(tag => tag.trim())
+            .filter(function(n) { return n!= "" })
+        }
+      });
+      console.log(devtoList);
     }
   }, (error) => console.log(err));
