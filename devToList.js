@@ -14,9 +14,13 @@ axios.get('https://dev.to/aurelkurtula')
           url: $(this).children('.index-article-link').attr('href'),
           tags: $(this).find('.tags').text().split('#')
             .map(tag => tag.trim())
-            .filter(function(n) { return n!= "" })
+            .filter(function(n) { return n!== "" })
         }
       });
-      console.log(devtoList);
+
+      // Save to json
+      const devtoListTrimmed = devtoList.filter(n => n.url !== undefined);
+      fs.writeFile('devtoData.json', JSON.stringify(devtoListTrimmed, null, 4),
+          (err) => console.log('File successfully written'));
     }
   }, (error) => console.log(err));
